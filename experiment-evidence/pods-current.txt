@@ -1,0 +1,4 @@
+NAME                                READY   STATUS    RESTARTS       AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+productcatalogue-76455dfd56-v5lg5   1/1     Running   29 (14m ago)   23h   10.244.0.2    minikube   <none>           <none>
+shopfront-868fb748cb-tml68          1/1     Running   14 (26m ago)   17h   10.244.0.11   minikube   <none>           <none>
+stockmanager-74f888db-mb8rx         1/1     Running   29 (13m ago)   23h   10.244.0.6    minikube   <none>           <none>

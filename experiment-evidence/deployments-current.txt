@@ -1,0 +1,4 @@
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS         IMAGES                           SELECTOR
+productcatalogue   1/1     1            1           23h   productcatalogue   meghanas28/productcatalogue:v1   app=productcatalogue
+shopfront          1/1     1            1           23h   shopfront          meghanas28/shopfront:v1          app=shopfront
+stockmanager       1/1     1            1           23h   stockmanager       meghanas28/stockmanager:v1       app=stockmanager

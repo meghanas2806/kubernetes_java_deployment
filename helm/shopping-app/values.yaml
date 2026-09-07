@@ -1,0 +1,52 @@
+shopfront:
+  replicas: 1
+
+  image:
+    repository: meghanas28/shopfront
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  hpa:
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilization: 60
+
+productcatalogue:
+  replicas: 1
+
+  image:
+    repository: meghanas28/productcatalogue
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+stockmanager:
+  replicas: 1
+
+  image:
+    repository: meghanas28/stockmanager
+    tag: v1
+    pullPolicy: IfNotPresent
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi

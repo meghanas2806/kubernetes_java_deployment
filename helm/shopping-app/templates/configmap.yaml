@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shopfront-config
+  namespace: {{ .Release.Namespace }}
+data:
+  PRODUCT_CATALOGUE_URI: "http://productcatalogue:8020"
+  STOCK_MANAGER_URI: "http://stockmanager:8030"

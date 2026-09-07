@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogue
+  namespace: shopping-app
+  labels:
+    app: productcatalogue
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: productcatalogue
+
+  template:
+    metadata:
+      labels:
+        app: productcatalogue
+
+    spec:
+      containers:
+        - name: productcatalogue
+          image: meghanas28/productcatalogue:v1
+
+          ports:
+            - name: http
+              containerPort: 8020
+
+            - name: admin
+              containerPort: 8025
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8025
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8025
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          startupProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8025
+            periodSeconds: 5
+            failureThreshold: 12

@@ -1,0 +1,15 @@
+Shopfront HPA Scaling Experiment
+
+Prometheus historical observation:
+20:38:30 -> 21:22:30 UTC: 1 replica
+21:22:30 -> 21:27:00 UTC: 2 replicas
+21:27:00 -> 21:37:30 UTC: 3 replicas
+21:37:30 -> 22:00:00 UTC: 1 replica
+
+Observed scaling pattern:
+1 -> 2 -> 3 -> 1 replicas
+
+HPA configuration:
+Minimum replicas: 1
+Maximum replicas: 3
+CPU target: 60% of CPU request

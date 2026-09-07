@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stockmanager
+  namespace: shopping-app
+  labels:
+    app: stockmanager
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: stockmanager
+
+  ports:
+    - name: http
+      port: 8030
+      targetPort: 8030
+      protocol: TCP

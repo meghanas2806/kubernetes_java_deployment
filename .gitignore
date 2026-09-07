@@ -1,0 +1,28 @@
+# Maven build files
+**/target/
+
+# Java compiled files
+*.class
+*.jar
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated Helm/Kubernetes output
+*-default-values.yaml
+monitoring-manifest.yaml
+grafana-deployment-current.yaml
+monitoring-values.yaml
+kube-prometheus-values.yaml
